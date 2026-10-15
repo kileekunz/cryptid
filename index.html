@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptid Origins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;}
+        body {
+            margin: 0;
+            background-color: black;
+            color: #d1d1d1;
+            font-family: 'Special Elite', 'Courier New', monospace;  }
+        header {
+            background-color: #c4c4c4;
+            color: black;
+            text-align: center;
+            padding: 14px 10px 8px;
+            border-bottom: 2px solid #eeeeee;
+            background-image: repeating-linear-gradient(
+                110deg,
+                transparent 0 2px,
+                rgba(0, 0, 0, 0.018) 2px 3px); }
+        h1 {
+            font-family: 'IM Fell English SC', Georgia, serif;
+            font-size: clamp(3.2rem, 8vw, 5.6rem);
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 1px 1px 0 #777777;  }
+        main {
+            max-width: 1100px;
+            margin: auto;   }
+        .intro {
+            padding: 28px 20px 18px;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+        .bones {
+            height: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .bones img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border-top: 5px ridge #dedede;
+            border-bottom: 5px ridge #dedede;
+        }
+        .cryptid {
+            min-height: 235px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 15px;
+            padding: 12px 14px;
+            border-bottom: 5px ridge #dedede;
+        }
+        .cryptid:nth-child(odd) {
+            border-right: 5px ridge #dedede;
+        }
+        .cryptid:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+.cryptid img {
+    display: block;
+    width: 52%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-mask-image:
+        radial-gradient(ellipse 56% 46% at 50% 50%, black 97%, transparent 100%),
+        radial-gradient(ellipse 27% 23% at 20% 25%, black 97%, transparent 100%),
+        radial-gradient(ellipse 29% 24% at 80% 75%, black 97%, transparent 100%),
+        radial-gradient(ellipse 22% 32% at 15% 65%, black 97%, transparent 100%),
+        radial-gradient(ellipse 24% 31% at 85% 35%, black 97%, transparent 100%);
+    mask-image:
+        radial-gradient(ellipse 56% 46% at 50% 50%, black 97%, transparent 100%),
+        radial-gradient(ellipse 27% 23% at 20% 25%, black 97%, transparent 100%),
+        radial-gradient(ellipse 29% 24% at 80% 75%, black 97%, transparent 100%),
+        radial-gradient(ellipse 22% 32% at 15% 65%, black 97%, transparent 100%),
+        radial-gradient(ellipse 24% 31% at 85% 35%, black 97%, transparent 100%);
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+.cryptid:nth-child(even) img {
+    transform: rotate(-3deg);
+}
+.cryptid:nth-child(odd) img {
+    transform: rotate(3deg);
+}
+        .cryptid p {
+            width: 44%;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.55;
+            margin: 0;
+        }
+        .cryptid.reverse {
+            flex-direction: row-reverse;
+        }
+        .kraken {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 390px;
+            padding: 20px;
+        }
+        .kraken img {
+            max-width: 480px;
+            width: 80%;
+            max-height: 360px;
+            object-fit: contain;
+        }
+        footer {
+            background-color: #c4c4c4;
+            color: black;
+            text-align: center;
+            padding: 6px 10px;
+            font-family: 'IM Fell English SC', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            background-image: repeating-linear-gradient(
+                110deg,
+                transparent 0 2px,
+                rgba(0, 0, 0, 0.018) 2px 3px
+            );
+        }
+        @media (max-width: 680px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            .cryptid:nth-child(odd) {
+                border-right: none;
+            }
+            .cryptid:nth-last-child(2) {
+                border-bottom: 5px ridge #dedede;
+            }
+            .cryptid {
+                min-height: 195px;
+            }
+            .cryptid img {
+                height: 170px;
+            }
+            .cryptid p {
+                font-size: 12px;
+            }
+            .intro {
+                font-size: 12px;
+            }
+            .bones {
+                height: 100px;
+            }
+            .kraken {
+                min-height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cryptid Origins</h1>
+    </header>
+    <main>
+        <section class="intro">
+            <p>
+                A question to start us off is just what is a cryptid?
+                We've all probably heard of the word cryptic, but cryptid
+                is a totally different ballpark and meaning all in one.
+                The general definition is "animals or other beings whose
+                present existence is disputed or unsubstantiated by science".
+                In other words, think of paranormal creatures that may or
+                may not exist in the world around us and their existence
+                is driven by immense folklore. Some we've probably heard
+                of, like the big foot or the wendigo, but there's a lot
+                more uncommon ones that you probably haven't heard of before.
+                And you probably don't know the origins of some of these
+                cryptids either. So now, we're going to go and explore
+                the origins of some of our beloved cryptids throughout history.
+            </p>
+        </section>
+        <div class="bones">
+            <img src="skeleton-divider.png"
+                 alt="Decorative skeletal creature">
+        </div>
+        <section class="gallery">
+            <article class="cryptid">
+                <img src="siren.png" alt="Siren illustration">
+                <p>
+                    A siren has the appearance of a traditional
+                    mermaid, but they are known for luring and
+                    killing sailors in the sea with their voice.
+                    Sirens originate in various oceans.
+                </p>
+            </article>
+            <article class="cryptid reverse">
+                <img src="chupacabra.png"
+                     alt="Chupacabra illustration">
+                <p>
+                    The chupacabra is a small hyena and bat-like
+                    creature that feeds on livestock. It's rumored
+                    location in existence is Puerto Rico (originally),
+                    South and Central America, and Southern North America.
+                </p>
+            </article>
+            <article class="cryptid reverse">
+                <img src="sasquatch.png"
+                     alt="Sasquatch illustration">
+                <p>
+                    Arguably one of the most common cryptids,
+                    the Sasquatch (big foot) is a tall, furry
+                    humanoid creature. It is known to wander
+                    the woods and its purported location is
+                    the United States as well as California.
+                </p>
+            </article>
+            <article class="cryptid">
+                <img src="death-worm.png"
+                     alt="Mongolian Death Worm illustration">
+                <p>
+                    The Mongolian Death Worm is a massive
+                    worm-like creature that burrows in dunes.
+                    It's purported location is in the
+                    Gobi Desert in Asia.
+                </p>
+            </article>
+            <article class="cryptid">
+                <img src="loch-ness.png"
+                     alt="Loch Ness Monster illustration">
+                <p>
+                    The loch ness monster, otherwise known as Nessie,
+                    is a sea creature that has the appearance of
+                    some sort of Lake Monster, known to be the top
+                    of the food chain in the sea. It's primarily
+                    rumored to be in Scotland.
+                </p>
+            </article>
+            <article class="cryptid reverse">
+                <img src="jersey-devil.png"
+                     alt="Jersey Devil illustration">
+                <p>
+                    The Jersey Devil, otherwise known as the
+                    Leeds Devil, has the appearance of a winged,
+                    bipedal horse. The Jersey devil, as you can
+                    guess, originates in New Jersey.
+                </p>
+            </article>
+            <article class="cryptid reverse">
+                <img src="wendigo.png"
+                     alt="Wendigo illustration">
+                <p>
+                    The wendigo is a cannibalistic appearance
+                    that has a rotten humanoid appearance with
+                    a deer skull. The tale of the wendigo
+                    originates from Indigenous traditions
+                    and folklore in North America.
+                </p>
+            </article>
+            <article class="cryptid">
+                <img src="mothman.png"
+                     alt="Mothman illustration">
+                <p>
+                    The mothman is a bipedal winged creature
+                    that is seen as a bad omen in Mason County
+                    Virginia, seen as a warning for people
+                    who are passing through the area of a
+                    fallen bridge in that county.
+                </p>
+            </article>
+        </section>
+        <div class="kraken">
+            <img src="octopus.png"
+                 alt="Decorative octopus illustration">
+        </div>
+    </main>
+    <footer>
+        By: Kilee Kunz
+    </footer>
+</body>
+</html>
